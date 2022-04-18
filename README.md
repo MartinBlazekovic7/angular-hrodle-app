@@ -1,10 +1,8 @@
-19.03.
-igra gotova i radi
+## HRODLE
+Croatian version of the popular game Wordle as interpreted by me for Angular practice.
+I did it my own way without looking how other Wordle games are made.
 
-na resultu
-zbog relativnog positioninga ima donji margin na cijeloj stranici
-margin se popravi sa absolute ali onda ne radi prozor
+I made the game available for friends http://hrodle.great-site.net/
 
-
-sa promiseom se treba rijesit da se odmah ucita prozor sa resultom
-
+Soon the demo of the app on Youtube:
+COMING SOON
