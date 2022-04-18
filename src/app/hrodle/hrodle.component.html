@@ -1,0 +1,61 @@
+<body id="bodyID">
+    <header>
+      <h1>HRodle</h1>
+    </header>
+
+    <p id="nepostoji">Nije na popisu riječi!</p>
+    <main id="container " #main>
+      <div *ngFor="let word of wordField; index as i;" class="parent">
+        <div *ngFor="let letters of word.word; index as i" class="child">
+          {{letters.letter}}
+        </div>
+      </div>
+
+    </main>
+
+    <section id="keyboard">
+     <div id="firstRow"><div *ngFor="let a of alphabet" (click)="insertLetter(a.letter)" class="letterKey">{{a.letter}}</div></div>
+      <div id="secondRow"><div *ngFor="let a of alphabet2" (click)="insertLetter(a.letter)" class="letterKey">{{a.letter}}</div></div>
+      <div id="thirdRow">
+        <div (click)="insertLetter('Enter')" class="letterKey enter">Upiši</div>
+        <div *ngFor="let a of alphabet3" (click)="insertLetter(a.letter)" class="letterKey">{{a.letter}}</div>
+        <div (click)="insertLetter('Backspace') "class="letterKey enter">Obriši</div>
+      </div>
+
+    </section>
+
+    <footer>
+    <div id="result">
+      <div id="text">
+        <div class="stats">
+          <h1>{{playedTotal}}</h1>
+          <i>Odigranih</i>
+        </div>
+        <div class="stats">
+          <h1>{{streak}}</h1>
+          <i>Niz pobjeda</i>
+        </div>
+        <div class="stats">
+          <h1>{{highscore}}</h1>
+          <i>Najveći niz pobjeda</i>
+        </div>
+        <div class="stats">
+          <h1>{{hours | number : '2.0-0'}}:{{minutes | number : '2.0-0'}}:{{seconds | number : '2.0-0'}}</h1>
+          <i class="timer">Sljedeći Hrodle</i>
+        </div>
+        <div class="stats">
+          <h1>{{finalWord}}</h1>
+          <i class="timer">Današnja riječ</i>
+        </div>
+        <div class="stats">
+          <button id="share" (click)="copyClipboard()">Podijeli</button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+</body>
+
